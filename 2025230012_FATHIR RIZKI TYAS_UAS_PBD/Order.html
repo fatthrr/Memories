@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topup Game Center</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET & DASAR ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #aaaa43, #787c3f, #36361e);
+      color: white;
+      min-height: 100vh;
+    }
+
+    /* ===== FORM TOPUP ===== */
+    .form-section {
+      padding: 60px 80px;
+      background-color: rgba(0,0,0,0.8);
+      text-align: center;
+    }
+
+    .form-section h2 {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #1b1b1b;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #f0e68c;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #f0e68c;
+      color: #000;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #fff176;
+    }
+</style>
+</head>
+<body>
+      <section id="form" class="form-section">
+    <h2>🧾 Formulir Pemesanan Top-Up</h2>
+    <form>
+      <label for="game">Pilih Game</label>
+      <select id="game" required>
+        <option value="">-- Pilih Game --</option>
+        <option>Mobile Legends</option>
+        <option>Free Fire</option>
+        <option>Genshin Impact</option>
+        <option>PUBG Mobile</option>
+      </select>
+
+      <label for="idplayer">ID Player / UID</label>
+      <input type="text" id="idplayer" placeholder="Masukkan ID Player Kamu" required>
+
+      <label for="jumlah">Jumlah Diamond / UC</label>
+      <select id="jumlah" required>
+        <option value="">-- Pilih Jumlah --</option>
+        <option>86 Diamond</option>
+        <option>170 Diamond</option>
+        <option>257 Diamond</option>
+        <option>514 Diamond</option>
+      </select>
+
+      <label for="bayar">Metode Pembayaran</label>
+      <select id="bayar" required>
+        <option value="">-- Pilih Metode --</option>
+        <option>DANA</option>
+        <option>OVO</option>
+        <option>GoPay</option>
+        <option>Transfer Bank</option>
+      </select>
+
+      <button type="submit">Kirim Pesanan</button>
+    </form>
+  </section>
+</body>

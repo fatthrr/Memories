@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FATH KICKS</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+
+    <style>
+        /* TOP BAR */
+        .top-bar {
+            background-color: #2b2b2b;
+            font-size: 14px;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* LOGO */
+        .logo {
+            font-weight: 800;
+            font-size: 28px;
+            color: #a20000;
+            line-height: 1;
+        }
+
+        /* MENU */
+        .nav-link {
+            color: black !important;
+            font-weight: 500;
+            margin: 0 10px;
+        }
+
+        .nav-link.active {
+            border-bottom: 2px solid #ff6a00;
+        }
+
+        /* SEARCH */
+        .search-box {
+            background: #f1f1f1;
+            border-radius: 20px;
+            padding: 6px 15px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+        }
+
+        /* DROPDOWN */
+        .dropdown-menu {
+            border-radius: 0;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-card {
+            border: none;
+            position: relative;
+        }
+
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff7a00;
+            color: white;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .product-title {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .price {
+            font-weight: 600;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .discount {
+            background: #ffecec;
+            color: #ff3b3b;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 5px;
+        }
+
+        .product-card img {
+            max-height: 180px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar py-2">
+    <div class="container d-flex justify-content-end">
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Store-Location.html">Store Location</a>
+        <a href="Sign-in.html">Sign In</a>
+        <a href="Contact.html">Contact</a>
+        <a href="Help.html">Help</a>
+        <a href="Question.html">Question</a>
+        <a href="Testimonial.html">Testimonial</a>
+    </div>
+</div>
+
+
+<!-- MAIN NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white border-bottom py-3">
+    <div class="container">
+
+        <!-- LOGO -->
+        <a class="navbar-brand logo" href="index.html">
+            FATH<br>KICKS
+        </a>
+
+        <!-- TOGGLER (MOBILE) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- MENU -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+                <!-- BRANDS DROPDOWN -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        BRANDS
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="Nike.html">Nike</a></li>
+                        <li><a class="dropdown-item" href="Adidas.html">Adidas</a></li>
+                        <li><a class="dropdown-item" href="Puma.html">Puma</a></li>
+                        <li><a class="dropdown-item" href="New-Balance.html">New Balance</a></li>
+                    </ul>
+                </li>
+
+                <!-- SPORTS DROPDOWN -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        SPORTS
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="Running.html">Running</a></li>
+                        <li><a class="dropdown-item" href="Basketball.html">Basketball</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="Men.html">MEN</a></li>
+                <li class="nav-item"><a class="nav-link" href="Women.html">WOMEN</a></li>
+                <li class="nav-item"><a class="nav-link active" href="Kids.html">KIDS</a></li>
+            </ul>
+
+            <!-- SEARCH & CART -->
+            <div class="d-flex align-items-center gap-3">
+                <div class="search-box d-flex align-items-center">
+                    <i class="bi bi-search me-2"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+                <i class="bi bi-cart fs-4"></i>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- PROMO -->
+<div class="text-center py-2 small">
+    Free Shipping! – On All Orders
+</div>
+
+<div class="container my-5">
+    <div class="row g-4">
+
+         <div class="col-md-3 col-sm-6">
+            <div class="card product-card">
+                <img src="Nike Air Force 1 LE Junior.webp" class="card-img-top" alt="">
+                <div class="card-body">
+                    <p class="product-title">
+                        Nike Air Force 1 LE Junior
+                    </p>
+                    <p class="price">Rp. 1,099,000</p>
+                    <button onclick="addToCart('Nike Air Force 1 LE Junior')" class="btn btn-dark">
+  Add to Cart
+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card product-card">
+                <img src="New Balance 530 Junior.webp" class="card-img-top" alt="">
+                <div class="card-body">
+                    <p class="product-title">
+                        New Balance 530 Junior
+                    </p>
+                    <p class="price">Rp. 1,299,000</p>
+                    <button onclick="addToCart('New Balance 530 Junior')" class="btn btn-dark">
+  Add to Cart
+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+let cart = [];
+
+function addToCart(productName) {
+  cart.push(productName);
+  alert(productName + " berhasil ditambahkan ke keranjang");
+}
+</script>
+
+</body>
+</html>
