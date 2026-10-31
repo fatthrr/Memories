@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memories</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<audio id="musik" loop>
+    <source src="Sampai Jadi Debu (Instrumental Version).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    document.addEventListener("click", function() {
+        let musik = document.getElementById("musik");
+
+        if (musik.paused) {
+            musik.play();
+        }
+    }, { once: true });
+</script>
+  
+  <style>
+    /* ===== RESET & DASAR ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #e702b5, #3f043b, #36361e);
+      color: white;
+      min-height: 100vh;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f0e68c;
+    }
+
+    /* ===== BANNER ===== */
+    .banner {
+      height: 110vh;
+      background: url(foto\ bareng.jpg) center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .banner::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .banner h1 {
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .banner p {
+      font-size: 20px;
+      color: #f0e68c;
+    }
+
+    /* ===== PRODUK ===== */
+    .produk-section {
+      padding: 100px 80px;
+      text-align: center;
+    }
+
+    .produk-section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .produk-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .produk-card {
+      background-color: #1b1b1b;
+      border-radius: 50px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+
+    .produk-card:hover {
+      transform: scale(1.05);
+    }
+
+    .produk-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block ;
+    }
+
+    .produk-info {
+      padding: 15px;
+    }
+
+    .produk-info h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .produk-info p {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+
+    .btn-beli {
+      display: none;
+      background-color: #f0e68c;
+      color: #000;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-beli:hover {
+      background-color: #fff176;
+    }
+
+    /* ===== TESTIMONI ===== */
+    .testimoni {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 50px 80px;
+      text-align: center;
+    }
+
+    .testimoni h2 {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    .testi-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .testi-card {
+      background-color: #2a2a2a;
+      padding: 30px 40px;
+      border-radius: 15px;
+      width: 500px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    }
+
+    .testi-card p {
+      font-style: italic;
+      color: #e0e0e0;
+      margin-bottom: 10px;
+    }
+
+    .testi-card h4 {
+      color: #f0e68c;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <div class="logo"><center>Both of us (klik me please)</center></div>
+  </header>
+
+  <!-- ===== BANNER ===== -->
+  <section class="banner">
+    <div class="banner-content">
+      <h1>You and Me</h1>
+      <p>21-06-2025</p>
+    </div>
+  </section>
+
+  <!-- ===== PRODUK ===== -->
+  <section id="produk" class="produk-section">
+    <h2>Memories</h2>
+    <div class="produk-container">
+      <div class="produk-card">
+        <img src="First Date.jpeg" alt="Mobile Legends">
+        <div class="produk-info">
+          <h3>First Date</h3>
+          <p>ini first date kita hehe, aku buatin kamu cincin dari kertas dulu. disimpen yaa</p>
+          
+        </div>
+      </div>
+
+      <div class="produk-card">
+        <img src="Keruma Sindi.jpeg" alt="Free Fire">
+        <div class="produk-info">
+          <h3>Keruma Sindi</h3>
+          <p>waktu itu kamu nyuruh aku ke sindi buat abisin mie kamu yang ga abis, soalnya kamu belagu abisin 2 porsi haha</p>
+          <a href="iseng .html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+
+      <div class="produk-card">
+        <img src="Difotoin Pertama.jpeg" alt="Genshin Impact">
+        <div class="produk-info">
+          <h3>Difotoin Pertama Kali</h3>
+          <p>kita pulang nonton boyz combat, teruss kita di fotoin sindi sama kepin di portal wkwk</p>
+          <a href="iseng .html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+
+      <div class="produk-card">
+        <img src="Ultah Kamu .jpeg" alt="PUBG Mobile">
+        <div class="produk-info">
+          <h3>Ultah Kamu</h3>
+          <p>Kamu seneng banget pas aku kasih hadiah banyak, hari itu juga sekaligus first time kita photobooth</p>
+          <a href="iseng .html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="produk-container">
+      <div class="produk-card">
+        <img src="Nonton .jpeg" alt="Mobile Legends">
+        <div class="produk-info">
+          <h3>Movie Date</h3>
+          <p>Ini pertama kalinya kita movie date, gemess bisa senderan teruss kamu ke akuu sambil pegangan tangan</p>
+          <a href="Order.html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+
+      <div class="produk-card">
+        <img src="Nemenin di Tomoro.jpeg" alt="Free Fire">
+        <div class="produk-info">
+          <h3>Tomoro</h3>
+          <p>Ini waktu nungguin kamu pulsek jadinya di tomoro aku, teruss kamuu dateng</p>
+          <a href="iseng .html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+
+      <div class="produk-card">
+        <img src="Ngedate Di lekker.jpeg" alt="Genshin Impact">
+        <div class="produk-info">
+          <h3>Lekker Date</h3>
+          <p>Pertama Kalinya aku di kenalin sama lekker sama kamu, seru kita buat vid disitu sambil aku di pakein penebal alis wkwk</p>
+          <a href="iseng .html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+
+      <div class="produk-card">
+        <img src="Sate with Rain.jpeg" alt="PUBG Mobile">
+        <div class="produk-info">
+          <h3>Sate With Rain</h3>
+          <p>Waktu itu nungguin kamu ngirim pakett sampee malemm, eh ujann jadinyaa kita mam satee sambil nunggu</p>
+          <a href="iseng .html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="produk-container">
+      <div class="produk-card">
+        <img src="Sambak after PKKMB.jpeg" alt="Mobile Legends">
+        <div class="produk-info">
+          <h3>Sambak After PKKMB</h3>
+          <p>pas ituu aku cepet selesainyaa teruss abis ujan juga kalo gasalah ya, aku ngajak kamu mam sambak teruss kamu di interview wkwkk</p>
+          <a href="Order.html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+
+      <div class="produk-card">
+        <img src="DIfotoin Sindi.jpeg" alt="Free Fire">
+        <div class="produk-info">
+          <h3>Sajenak</h3>
+          <p>Ini waktu kamu minta di jemputt pas kamu abis mutusin aku, teruss aku manggil nama kamu kamu nangis di depan sindi, jadinya aku peluk</p>
+          <a href="iseng .html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+
+      <div class="produk-card">
+        <img src="Penyet Kesukaan Kamu.jpeg" alt="Genshin Impact">
+        <div class="produk-info">
+          <h3>Penyet</h3>
+          <p>Ini jadi penyet kesukaan kita wkkw, kalo laper terus bingung ini pasti jadi comford food kita</p>
+          <a href="iseng .html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+
+      <div class="produk-card">
+        <img src="First Valentine.jpeg" alt="PUBG Mobile">
+        <div class="produk-info">
+          <h3>Valentine</h3>
+          <p>ini jadi valentine pertama kita, kita main dari siang sampe malem. terus kamu aku kasih thumbelina sampe kamu salting</p>
+          <a href="iseng .html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="produk-container">
+      <div class="produk-card">
+        <img src="Mukbang.jpeg" alt="Mobile Legends">
+        <div class="produk-info">
+          <h3>Mukbang</h3>
+          <p>Ini kita mukbang wingstop sampe begah banget, sampee gabisa jalan waktu itu wkwk</p>
+          <a href="Order.html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+
+      <div class="produk-card">
+        <img src="Ketemu After Breakup.jpeg" alt="Free Fire">
+        <div class="produk-info">
+          <h3>Meet After Breakup</h3>
+          <p>setelah putus dan punya pasangan masing masing, kita ketemu lagi dan jalan buat beli dubai cheewy cookie sama cookies di bkt, kangen banget aku sama kamu pas itu</p>
+          <a href="iseng .html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+
+      <div class="produk-card">
+        <img src="Anniv.jpeg" alt="Genshin Impact">
+        <div class="produk-info">
+          <h3>Anniversary</h3>
+          <p>First Anniv kita, kita rayain di mall kesukaan kamu, dari siang sampe malemm. aku pertama kali naik tj disitu, aku berdiri kamu duduk</p>
+          <a href="iseng .html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+
+      <div class="produk-card">
+        <img src="Last .jpeg" alt="PUBG Mobile">
+        <div class="produk-info">
+          <h3>Last</h3>
+          <p>Photobooth terakhir</p>
+          <a href="iseng .html" class="btn-beli">Top Up Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONI ===== -->
+  <section id="testimoni" class="testimoni">
+    <h2>From me</h2>
+    <div class="testi-container">
+      <div class="testi-card">
+        <p>"to my first love, first i wanna say i love u, Thank you for coming into my abstract life. Before, I was just drifting through life, feeling pretty indifferent—but since meeting you, I’ve found a new sense of enthusiasm for each passing day. Beyond wanting to bring happiness to my family, I now have a goal: to make you happy, too.
+          <p>di penghujung tahun ini kita kembali kena masalah di hubungan kita gara gara kelakuan aku yang gatau diri ini. untuk kesekian kalinya aku ngecewain kamu di titik ini. aku minta maaf uda ngulangin kesalahan ini lagi. mau gimanapun pasti gabisa kamu maafin dan kamu bosen dengernya, jadi mungkin dengan aku bikin ini bisa gantiin kata maaf aku biar ga monoton buat kamu
+          <p>aku bersyukur di kehidupan yang singkat ini bisa ketemu kamu dan jadi pasangan kamu walaupun ga selamanya, terimakasih yaa atas semua kasih sayang yang udah kamu kasih ke aku, tolong semua yang dari aku jangan dibuang, disimpen aja ya kalo emang gamau dipake, aku ngasih ke kamu beneran dengan sayang. semoga sehabis ini kamu nemuin pasangan yang lebih bersyukur yaa, biar gaakan dibuat sakit hati sampe nangis. terakhir, i love you joanna"</p>
+        <h4>- Ur Ex</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    © I Love You 210626
+  </footer>
+
+</body>
+</html>
